@@ -1,48 +1,154 @@
-.header__container {
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: relative;
-    height: 7em;
-    padding: 10px 30px;
-    background-color: var(--Bluish-black);
-    /* color: var(--Light-Grey) */
+/* --bg-color: #0D1117;
+--lyrics-color: #E6EDF3;
+--links-color: #58A6FF;
+--details-color: #161B22;
+--buttons-color: #238636;
+--hover-color: #79C0FF; 
+--font-text: 'Roboto', sans-serif;
+--font-title: 'Lora', serif;*/
+
+body {
+  background-color: var(--bg-color);
+  color: var(--lyrics-color);
+  margin: 10px;
+  border: 5px double var(--links-color);
+  border-radius: 10px;
+  min-height: calc(100vh - 10px);
+  box-sizing: border-box;
+  font-family: var(--font-text);
 }
 
-li {
-    display: inline; 
-    margin-left: 60px; 
+/* aqui começa o header */
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 7em;
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.menu li {
+  display: inline;
+  margin-inline: 30px;
+}
+
+.menu li a {
+  color: var(--lyrics-color);
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-hamburguer {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: none; /* Esconde o botão */
+  font-size: 24px;
+  background: var(--buttons-color);
+  color: var(--lyrics-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-.menu-hamburguer button {
-    width: 40px;
-    height: 40px;
-    color: var(--light-grey);
-    background-color: var(--green);
+.menu-hamburguer i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-  
-  /* Responsivo: quando a tela for pequena */
-  @media (max-width: 600px) {
-    /* Esconde o menu normal */
-    .header__container {
-    align-items: center;
-    }
-    .menu {
-      display: none;
-    }
-  
-    /* Mostra o hamburguer */
-    .menu-hamburguer {
-      display: block;
-    }
+/* aqui termina o header */
+
+/* aqui começa o sidebar lateral */
+#overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+}
+
+#overlay.active {
+  display: block;
+}
+
+#sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* height: 100%; */
+  width: 25vw;
+  background-color: var(--bg-color);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+}
+
+#sidebar-menu.open {
+  transform: translateX(0);
+}
+
+#sidebar-menu ul li {
+  margin-top: 20px;
+}
+
+#sidebar-menu ul li a {
+  line-height: 1.3em;
+  text-decoration: none;
+  color: var(--lyrics-color);
+}
+
+#sidebar-menu ul li a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+/* aqui termina o sidebar lateral */
+
+/* aqui começa o main */
+.about-me {
+  display: flex;
+  align-items: left;
+  gap: 20px;
+}
+
+.about-me img {
+  margin: 36px;
+  min-width: 27vw;
+  min-height: 36vh;
+  border-radius: 48px 200px;
+  background-color: var(--links-color);
+}
+
+.about-me h2, .about-me p {
+  color: var(--lyrics-color);
+}
+
+/* Responsivo: quando a tela for pequena */
+@media (max-width: 768px) {
+  .header__container {
+    height: auto;
+    padding: 10px 20px;
   }
+
+  .menu {
+    display: none;
+  }
+
+  /* Mostra o hamburguer */
+  .menu-hamburguer {
+    display: block;
+  }
+}

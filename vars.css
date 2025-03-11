@@ -1,8 +1,18 @@
 :root{
     /* cores */
-    --Bluish-black: #0D1117;
-    --Light-grey: #E6EDF3;
-    --Light-blue: #58A6FF;
-    --dark-grey: #161B22;
-    --green: #238636;
+    --bg-color: #0D1117;
+    --lyrics-color: #E6EDF3;
+    --links-color: #58A6FF;
+    --details-color: #161B22;
+    --buttons-color: #238636;
+    --hover-color: #79C0FF;
+    /* fontes */
+    --font-text: 'Roboto', sans-serif;
+    --font-title: 'Lora', serif;
+
+    /* --Bluish-black: #F5F7FA;
+    --Light-grey:  #2E3440;
+    --Light-blue: #5E81AC ;
+    --dark-grey: #D8DEE9;
+    --green: #81A1C1; */
 }
