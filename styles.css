@@ -4,14 +4,45 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 8em;
-    padding: 20px;
+    position: relative;
+    height: 7em;
+    padding: 10px 30px;
     background-color: var(--Bluish-black);
     /* color: var(--Light-Grey) */
 }
 
 li {
     display: inline; 
-    margin-right: 10px; 
+    margin-left: 60px; 
+}
+
+.menu-hamburguer {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-hamburguer button {
+    width: 40px;
+    height: 40px;
+    color: var(--light-grey);
+    background-color: var(--green);
 }
   
+  /* Responsivo: quando a tela for pequena */
+  @media (max-width: 600px) {
+    /* Esconde o menu normal */
+    .header__container {
+    align-items: center;
+    }
+    .menu {
+      display: none;
+    }
+  
+    /* Mostra o hamburguer */
+    .menu-hamburguer {
+      display: block;
+    }
+  }
