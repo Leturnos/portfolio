@@ -9,13 +9,16 @@
 
 body {
   background-color: var(--bg-color);
-  color: var(--lyrics-color);
   margin: 10px;
   border: 5px double var(--links-color);
   border-radius: 10px;
   min-height: calc(100vh - 10px);
   box-sizing: border-box;
   font-family: var(--font-text);
+}
+
+* {
+  color: var(--lyrics-color);
 }
 
 /* aqui começa o header */
@@ -49,7 +52,6 @@ body {
   display: none; /* Esconde o botão */
   font-size: 24px;
   background: var(--buttons-color);
-  color: var(--lyrics-color);
   border: none;
   width: 40px;
   height: 40px;
@@ -106,8 +108,8 @@ body {
 
 #sidebar-menu ul li a {
   line-height: 1.3em;
+  font-size: 20px;
   text-decoration: none;
-  color: var(--lyrics-color);
 }
 
 #sidebar-menu ul li a:hover {
@@ -132,10 +134,18 @@ body {
   background-color: var(--links-color);
 }
 
-.about-me h2, .about-me p {
-  color: var(--lyrics-color);
+.about-me article h2{
+  margin: 100px 0 40px 0;
+  font-size: 32px;
 }
 
+.about-me article p{
+  font-size: 16px;
+  text-indent: 32px;
+  text-align: justify;
+  padding: 20px;
+}
+  
 /* Responsivo: quando a tela for pequena */
 @media (max-width: 768px) {
   .header__container {
