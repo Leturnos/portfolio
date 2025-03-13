@@ -6,6 +6,10 @@
 --hover-color: #79C0FF; 
 --font-text: 'Roboto', sans-serif;
 --font-title: 'Lora', serif;*/
+html {
+  /* pro rolamento não ser instantâneo */
+  scroll-behavior: smooth; 
+}
 
 body {
   background-color: var(--bg-color);
@@ -14,7 +18,6 @@ body {
   border-radius: 10px;
   min-height: calc(100vh - 10px);
   box-sizing: border-box;
-  font-family: var(--font-text);
 }
 
 * {
@@ -120,30 +123,55 @@ body {
 /* aqui termina o sidebar lateral */
 
 /* aqui começa o main */
-.about-me {
+.sobre-mim__container {
   display: flex;
   align-items: left;
   gap: 20px;
 }
 
-.about-me img {
+.sobre-mim__container img {
   margin: 36px;
-  min-width: 27vw;
-  min-height: 36vh;
+  width: 540px;
+  height: auto;
+  min-width: 270px; /* tamanho mínimo */
+  min-height: 360px;
   border-radius: 48px 200px;
   background-color: var(--links-color);
 }
 
-.about-me article h2{
+.sobre-mim__container article h2{
   margin: 100px 0 40px 0;
   font-size: 32px;
 }
 
-.about-me article p{
+.sobre-mim__container article p{
   font-size: 16px;
   text-indent: 32px;
   text-align: justify;
   padding: 20px;
+}
+
+.tecnologias__container {
+  padding: 30px;
+  border: 1px dashed var(--links-color);
+}
+
+.tecnologias__container h2{
+  font-size: 32px;
+  margin: 50px 0 20px 20px;
+}
+
+.tecnologias__container .images {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.tecnologias__container img {
+  width: auto;
+  height: 160px;
+  margin: 10px;
 }
   
 /* Responsivo: quando a tela for pequena */
@@ -160,5 +188,53 @@ body {
   /* Mostra o hamburguer */
   .menu-hamburguer {
     display: block;
+  }
+
+  .sobre-mim__container {
+    gap: 0;
+  }
+
+  .sobre-mim__container img {
+    margin: 10px;
+  }
+
+  .sobre-mim__container article p {
+    padding: 20px 10px 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-mim__container article h2, .tecnologias__container h2 {
+    margin: 50px 0 0 0;
+    font-size: 28px;
+  }
+
+  .sobre-mim__container img{
+    min-width: 230px;
+    min-height: 306px;
+  }
+
+}
+
+@media (max-width: 420px) {
+  body {
+    margin: 0;
+    border: 3px solid var(--links-color);
+    border-radius: 0;
+  }
+  
+  .sobre-mim__container article h2, .tecnologias__container h2 {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .sobre-mim__container article p {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .sobre-mim__container img{
+    min-width: 161px;
+    min-height: 215px;
   }
 }
