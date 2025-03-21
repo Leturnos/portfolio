@@ -9,7 +9,7 @@
 html {
   /* pro rolamento não ser instantâneo */
   scroll-behavior: smooth; 
-  scroll-padding-top: 150px;
+  scroll-padding-top: 175px;
 }
 
 body {
@@ -41,6 +41,17 @@ body {
   border: 5px double var(--links-color);
   border-bottom: none;
   box-sizing: border-box;
+}
+
+.header_about_me {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header_about_me img {
+  width: 150px;
+  height: auto;
 }
 
 .menu li {
@@ -133,8 +144,7 @@ body {
 /* aqui começa o main */
 .sobre-mim__container {
   display: flex;
-  align-items: left;
-  margin-top: 180px;
+  margin-top: 200px;
   gap: 20px;
 }
 
@@ -160,13 +170,13 @@ body {
 }
 
 .tecnologias__container {
-  padding: 30px;
+  padding: 10px;
   border: 1px dashed var(--links-color);
 }
 
 .tecnologias__container h2{
   font-size: 32px;
-  margin: 50px 0 20px 20px;
+  margin: 20px;
 }
 
 .tecnologias__container .images {
@@ -178,8 +188,26 @@ body {
 
 .tecnologias__container img {
   width: auto;
-  height: 160px;
-  margin: 10px;
+  height: 120px;
+  margin: 20px auto;
+  object-fit: cover;
+}
+
+@media (max-width: 1250px) {
+  .tecnologias__container img {
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 940px) {
+  .menu {
+    display: none;
+  }
+
+  /* Mostra o hamburguer */
+  .menu-hamburguer {
+    display: block;
+  }
 }
   
 /* Responsivo: quando a tela for pequena */
@@ -189,22 +217,14 @@ body {
     padding: 10px 20px;
   }
 
-  .menu {
-    display: none;
-  }
-
-  /* Mostra o hamburguer */
-  .menu-hamburguer {
-    display: block;
-  }
-
   .sobre-mim__container {
     gap: 0;
   }
 
   .sobre-mim__container img {
-    margin: 10px;
+    margin: auto 10px;
     min-width: 260px;
+    max-height: 380px;
   }
 
   .sobre-mim__container article h2{
@@ -224,7 +244,9 @@ body {
 
   .sobre-mim__container img{
     margin: auto;
-    width: 360px;
+    margin-top: 10px;
+    width: 320px;
+    max-height: none;
     height: auto;
   }
 
@@ -239,10 +261,21 @@ body {
   .sobre-mim__container {
     flex-direction: column;
   }
+}
 
+@media (max-width: 450px) {
+  .menu-hamburguer {
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 420px) {
+  .header__container {
+    border: 3px solid var(--links-color);
+    border-bottom: none;
+    border-radius: 0;
+  }
+
   body {
     margin: 0;
     border: 3px solid var(--links-color);
@@ -255,7 +288,6 @@ body {
   }
 
   .sobre-mim__container img{
-    margin: auto;
     width: 200px;
     height: auto;
   }
