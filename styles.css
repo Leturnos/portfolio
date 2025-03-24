@@ -9,7 +9,7 @@
 html {
   /* pro rolamento não ser instantâneo */
   scroll-behavior: smooth; 
-  scroll-padding-top: 175px;
+  scroll-padding-top: 12vw;
 }
 
 body {
@@ -23,6 +23,7 @@ body {
 
 * {
   color: var(--lyrics-color);
+  font-family: var(--font-text);
 }
 
 /* aqui começa o header */
@@ -160,6 +161,7 @@ body {
 .sobre-mim__container article h2{
   margin: 100px 0 40px 0;
   font-size: 32px;
+  font-family: var(--font-title);
 }
 
 .sobre-mim__container article p{
@@ -172,11 +174,14 @@ body {
 .tecnologias__container {
   padding: 10px;
   border: 1px dashed var(--links-color);
+  border-left: none;
+  border-right: none;
 }
 
 .tecnologias__container h2{
   font-size: 32px;
   margin: 20px;
+  font-family: var(--font-title);
 }
 
 .tecnologias__container .images {
@@ -191,6 +196,32 @@ body {
   height: 120px;
   margin: 20px auto;
   object-fit: cover;
+}
+
+.projetos__container {
+  display: grid;
+  justify-content: space-evenly;
+}
+
+.projetos__container h2 {
+  font-size: 32px;
+  margin: 30px auto;
+  font-family: var(--font-title);
+
+} 
+
+.projetos__container .grid {
+  display: flex;
+}
+
+.projetos__container .card {
+  width: 600px;
+  text-align: center;
+}
+
+.projetos__container img {
+  width: calc(100% - 20px);
+  height: 300px;
 }
 
 @media (max-width: 1250px) {
