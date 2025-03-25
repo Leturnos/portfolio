@@ -9,7 +9,7 @@
 html {
   /* pro rolamento não ser instantâneo */
   scroll-behavior: smooth; 
-  scroll-padding-top: 12vw;
+  scroll-padding-top: 15vw;
 }
 
 body {
@@ -38,10 +38,11 @@ body {
   min-height: 7em;
   padding: 10px 30px;
   border-radius: 0 0 15px 15px;
-  background-color: var(--bg-color);
+  background-color: var(--details-color);
   border: 5px double var(--links-color);
   border-bottom: none;
   box-sizing: border-box;
+  z-index: 100;
 }
 
 .header_about_me {
@@ -97,48 +98,59 @@ body {
 #overlay {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0; 
   width: 100%;
   height: 100%;
-  z-index: 999;
-  display: none;
+  background: rgba(0, 0, 0, 0.5); 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999; 
 }
 
 #overlay.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 #sidebar-menu {
   position: fixed;
   top: 0;
   right: 0;
-  /* height: 100%; */
   width: 25vw;
+  /* height: 100%; */
   background-color: var(--bg-color);
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  transition: transform 0.3s ease-out; 
+  z-index: 10000; 
   padding: 20px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2); 
 }
 
 #sidebar-menu.open {
   transform: translateX(0);
 }
 
+#sidebar-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Removendo bullets */
+}
+
 #sidebar-menu ul li {
-  margin-top: 20px;
+  margin: 20px 10px;
 }
 
 #sidebar-menu ul li a {
-  line-height: 1.3em;
+  display: inline-block; 
   font-size: 20px;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #sidebar-menu ul li a:hover {
   color: var(--hover-color);
   text-decoration: underline;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 /* aqui termina o sidebar lateral */
 
@@ -176,25 +188,36 @@ body {
   border: 1px dashed var(--links-color);
   border-left: none;
   border-right: none;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tecnologias__container h2{
   font-size: 32px;
   margin: 20px;
+  text-align: center;
   font-family: var(--font-title);
 }
 
 .tecnologias__container .images {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .tecnologias__container img {
   width: auto;
   height: 120px;
-  margin: 20px auto;
+  margin: 20px;
   object-fit: cover;
 }
 
