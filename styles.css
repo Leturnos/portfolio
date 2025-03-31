@@ -13,10 +13,10 @@ html {
 }
 
 body {
+  position: relative;
   background-color: var(--bg-color);
   margin: 10px;
   border: 5px double var(--links-color);
-  border-radius: 10px;
   min-height: calc(100vh - 10px);
   box-sizing: border-box;
 }
@@ -116,7 +116,6 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 25vw;
   background-color: var(--bg-color);
   transform: translateX(100%);
   transition: transform 0.3s ease-out; 
@@ -161,30 +160,30 @@ body {
 
 .sobre-mim__container img {
   display: block;
-  margin: 36px;
+  margin: auto 36px;
   height: auto;
   max-width: 290px; /* tamanho mínimo */
   border-radius: 36px 150px;
   background-color: var(--links-color);
-  animation: bolha 16s ease-in-out infinite;
+  animation: movimento 16s ease-in-out infinite;
 }
 
-@keyframes bolha {
+@keyframes movimento {
   0% { /* posição e borda inicial */
     transform: translateY(0); 
     border-radius: 36px 150px; 
   }
   25% {
-    transform: translateY(-20px); /* Move para cima */
-    border-radius: 18px 100px; 
+    transform: translateY(-5px); 
+    border-radius: 36px 100px; 
   }
   50% { /* Inversão do efeito */
-    transform: translateY(0); 
+    transform: translateY(-10px); 
     border-radius: 150px 36px; 
   }
   75% {
-    transform: translateY(10px); /* Move para baixo */
-    border-radius: 18px 100px; 
+    transform: translateY(-5px); 
+    border-radius: 36px 100px; 
   }
   100% { /* volta pra posição inicial */
     transform: translateY(0); 
@@ -200,7 +199,6 @@ body {
 }
 
 .sobre-mim__container article p{
-  font-size: 16px;
   text-indent: 32px;
   text-align: justify;
   padding: 10px 20px 0 0;
@@ -225,7 +223,7 @@ body {
 .tecnologias__container .images {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 10s linear infinite;
+  animation: scroll 12s linear infinite;
 }
 
 @keyframes scroll {
@@ -289,10 +287,132 @@ body {
   margin: 10px 0;
 }
 
+#contato h2{
+  font-size: 32px;
+  margin: 20px;
+  text-align: center;
+  font-family: var(--font-title);
+}
+
+.contato__container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.contato__container form {
+  width: 250px;
+  margin: 0 0 20px;
+  padding: 10px 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.contato__container legend {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.contato__container label {
+  display: block;
+  font-weight: bold;
+  color: black;
+  margin: 10px 0 5px 0;
+}
+
+.contato__container input,
+.contato__container textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+  color: black;
+}
+
+.contato__container textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contato__container input[type="submit"],
+.contato__container input[type="reset"] {
+  width: 48%;
+  font-size: 1em;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.contato__container input[type="submit"] {
+  background-color: #4CAF50;
+}
+
+.contato__container input[type="reset"] {
+  background-color: #f44336;
+}
+
+.contato__container input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.contato__container input[type="reset"]:hover {
+  background-color: #d32f2f;
+}
+
+.redes-sociais h3 {
+  font-size: 18px;
+  font-family: var(--font-title);
+}
+
+.redes-sociais__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.redes-sociais a i {
+  font-size: 50px;
+  margin: 5px 0 20px 0;
+}
+/* Aqui começa o footer */
+footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--details-color);
+  border-top: 5px double var(--links-color);
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 100;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+  color: var(--hover-color);
+}
+/* Aqui termina o footer */
 @media (max-width: 1250px) {
   .tecnologias__container img {
     margin: 20px 10px;
   }
+}
+
+.redes-sociais a i {
+  font-size: 30px;
 }
 
 @media (max-width: 830px) {
@@ -318,7 +438,6 @@ body {
   }
 
   .sobre-mim__container img {
-    margin: auto 10px;
     max-width: 260px;
     max-height: 380px;
     animation: none;
@@ -337,17 +456,17 @@ body {
   }
 
   .projetos__container h2 {
-    margin: 10px;
     font-size: 28px;
+    margin: 10px;
+  }
+
+  #contato h2{
+    font-size: 28px;
+    margin: 10px;
   }
 }
 
 @media (max-width: 600px) {
-   .tecnologias__container h2 {
-    margin: 20px 10px 0 0;
-    font-size: 28px;
-  }
-
   .sobre-mim__container img{
     margin: auto;
     margin-top: 10px;
@@ -368,8 +487,24 @@ body {
     flex-direction: column;
   }
 
+  .tecnologias__container h2 {
+    margin: 20px 10px 0 0;
+    font-size: 28px;
+  }
+
+  .tecnologias__container .images {
+    display: block;
+    animation: none;
+    overflow-x: auto;
+  }
+
   .projetos__container {
     padding: 5px;
+  }
+
+  .contato__container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -377,9 +512,16 @@ body {
   .menu-hamburguer {
     margin-bottom: 15px;
   }
-}
 
+  .contato__container form {
+    width: 200px;
+  }
+}
 @media (max-width: 420px) {
+  p {
+    font-size: 14px;
+  }
+
   .header__container {
     border: 3px solid var(--links-color);
     border-bottom: none;
@@ -404,5 +546,23 @@ body {
 
   .sobre-mim__container article p {
     padding: 10px;
+  }
+
+  .tecnologias__container img {
+    height: 80px;
+  }
+
+  .projetos__container h2 {
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .projetos__container h3 {
+    font-size: 16px;
+  }
+
+  #contato h2{
+    font-size: 24px;
+    margin: 0;
   }
 }

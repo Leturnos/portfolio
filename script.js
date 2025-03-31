@@ -2,21 +2,21 @@
 const sidebarToggle = document.getElementById('sidebar-toggle'); // botão para abrir o menu
 const sidebarMenu = document.getElementById('sidebar-menu'); // menu lateral
 const overlay = document.getElementById('overlay'); // o overlay
-const menuSection = document.querySelectorAll('.menu-section'); // 
+const menuSection = document.querySelectorAll('.menu-section'); 
 
-// para abrir o menu
+// para abrir o menu lateral
 sidebarToggle.addEventListener('click', () => {
     sidebarMenu.classList.add('open');
     overlay.classList.add('active');
 });
 
-// para fechar o menu
+// para fechar o menu lateral
 function fecharMenu() {
     sidebarMenu.classList.remove('open');
     overlay.classList.remove('active');
 }
 
-overlay.addEventListener('click', fecharMenu); // quando o usuário clicar fora do menu lateral
+overlay.addEventListener('click', fecharMenu); // para quando o usuário clicar fora do menu lateral
 
 menuSection.forEach((item) => {
     item.addEventListener('click', (event) => {
@@ -24,6 +24,13 @@ menuSection.forEach((item) => {
             setTimeout(() => {
                 fecharMenu();
                 window.location.href = item.getAttribute("href"); // procura a section correspondente
-            }, 100); // atraso de 1s
+            }, 100); // atraso de 1s pra tirar o menu
     });
 });
+
+// Pra remover alguns itens do html (section tecnologia)
+window.addEventListener("resize", function () {
+    if (window.innerWidth < 600) {
+      document.querySelector(".duplicado").remove();
+    }
+  });

@@ -81,13 +81,13 @@
                     <img src="java.png"></img>
                     <img src="mysql.png"></img>
                     <img src="git.png"></img>
-                    <img src="html.png"></img>
-                    <img src="css.png"></img>
-                    <img src="javascript.png"></img>
-                    <img src="python.png"></img>
-                    <img src="java.png"></img>
-                    <img src="mysql.png"></img>
-                    <img src="git.png"></img>
+                    <img src="html.png" class="duplicado"></img>
+                    <img src="css.png" class="duplicado"></img>
+                    <img src="javascript.png" class="duplicado"></img>
+                    <img src="python.png" class="duplicado"></img>
+                    <img src="java.png" class="duplicado"></img>
+                    <img src="mysql.png" class="duplicado"></img>
+                    <img src="git.png" class="duplicado"></img>
                 </div>
             </div>
         </section>
@@ -98,7 +98,8 @@
                 <h3>Clique em um card para ser redirecionado ao github</h3>
                 <div class="grid">
                     <div class="card" id="card1">
-                        <a href="https://github.com/Leturnos/Extensionista-II" target="_blank" title="Clique para ver o código">
+                        <a href="https://github.com/Leturnos/Extensionista-II" target="_blank"
+                            title="Clique para ver o código">
                             <img src="projeto1.jpg" alt="captura de tela de um projeto da faculdade">
                         </a>
                         <p>
@@ -106,7 +107,7 @@
                             disciplina
                         </p>
                     </div>
-                    <div class="card" id="card2">
+                    <!-- <div class="card" id="card2">
                         <img src="projeto1.jpg" alt="captura de tela de um trabalho da faculdade">
                         <p>
                             Fiz essa página web em conjunto com 2 amigos da faculdade para um trabalho de outra
@@ -119,18 +120,56 @@
                             Fiz essa página web em conjunto com 2 amigos da faculdade para um trabalho de outra
                             disciplina
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
 
         <section id="contato">
-            <h2>Sobre Mim</h2>
-            <p>Texto sobre você...</p>
+            <h2>Contato</h2>
+            <div class="contato__container">
+                <!-- Ainda não é funcional -->
+                <form action="formulario.php" method="post" autocomplete="on">
+                    <fieldset>
+                        <legend>Fale comigo</legend>
+                        <div>
+                            <label for="inome">Nome *</label>
+                            <input type="text" id="inome" name="nome:" placeholder="Digite seu Nome" required>
+                        </div>
+                        <div>
+                            <label for="iemail">Email *</label>
+                            <input type="email" id="iemail" name="email: " placeholder="Digite seu Email" required>
+                        </div>
+                        <div>
+                            <label for="itexto">Em que posso ajudar? *</label>
+                            <textarea type="text" id="itexto" name="mensagem: " placeholder="Escreva aqui"
+                                required></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="ENVIAR">
+                            <input type="reset" value="RESETAR">
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="redes-sociais">
+                    <h3>Outras Redes Sociais:</h3>
+                    <div class="redes-sociais__container">
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-
+        <div class="footer-content">
+            <p>&copy; 2025 Portfólio pessoal. Todos os direitos reservados.</p>
+            <p>Powered by <a href="https://github.com/Leturnos/Portfolio" target="_blank">GitHub</a></p>
+        </div>
     </footer>
 </body>
 <script src="script.js"></script>
