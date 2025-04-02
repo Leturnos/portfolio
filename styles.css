@@ -163,7 +163,7 @@ body {
   margin: auto 36px;
   height: auto;
   max-width: 290px; /* tamanho mínimo */
-  border-radius: 36px 150px;
+  border-radius: 36px 180px;
   background-color: var(--links-color);
   animation: movimento 16s ease-in-out infinite;
 }
@@ -171,23 +171,23 @@ body {
 @keyframes movimento {
   0% { /* posição e borda inicial */
     transform: translateY(0); 
-    border-radius: 36px 150px; 
+    border-radius: 36px 180px; 
   }
   25% {
     transform: translateY(-5px); 
-    border-radius: 36px 100px; 
+    border-radius: 72px 100px; 
   }
   50% { /* Inversão do efeito */
     transform: translateY(-10px); 
-    border-radius: 150px 36px; 
+    border-radius: 140px 36px; 
   }
   75% {
     transform: translateY(-5px); 
-    border-radius: 36px 100px; 
+    border-radius: 72px 100px; 
   }
   100% { /* volta pra posição inicial */
     transform: translateY(0); 
-    border-radius: 36px 150px; 
+    border-radius: 36px 180px; 
   }
 }
 
@@ -255,7 +255,7 @@ body {
 } 
 
 .projetos__container h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-family: var(--font-title);
   margin: 10px 0;
 }
@@ -268,7 +268,11 @@ body {
 }
 
 .projetos__container .card {
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--details-color);
+  box-shadow: 2px 2px 20px rgba(82, 82, 82, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
 }
 
 .projetos__container img {
@@ -285,6 +289,7 @@ body {
 
 .projetos__container .card p{
   margin: 10px 0;
+  padding: 0 20px;
 }
 
 #contato h2{
@@ -428,9 +433,16 @@ footer {
   
 /* Responsivo: quando a tela for pequena */
 @media (max-width: 768px) {
+  body {
+    margin: 5px;
+    border: 4px double var(--links-color);
+  }
   .header__container {
     height: auto;
     padding: 10px 20px;
+    border-radius: 0 0 10px 10px;
+    border: 4px double var(--links-color);
+    border-bottom: none;
   }
 
   .sobre-mim__container {
@@ -440,6 +452,7 @@ footer {
   .sobre-mim__container img {
     max-width: 260px;
     max-height: 380px;
+    margin: auto 9px;
     animation: none;
   }
 
@@ -467,6 +480,14 @@ footer {
 }
 
 @media (max-width: 600px) {
+  #sidebar-menu ul li {
+    margin: 15px 0;
+  }
+
+  #sidebar-menu ul li a {
+    font-size: 16px;
+  }
+
   .sobre-mim__container img{
     margin: auto;
     margin-top: 10px;
@@ -518,6 +539,12 @@ footer {
   }
 }
 @media (max-width: 420px) {
+  body {
+    margin: 0;
+    border: 3px solid var(--links-color);
+    border-radius: 0;
+  }
+
   p {
     font-size: 14px;
   }
@@ -528,12 +555,10 @@ footer {
     border-radius: 0;
   }
 
-  body {
-    margin: 0;
-    border: 3px solid var(--links-color);
-    border-radius: 0;
+  #sidebar-menu ul li {
+    margin: 10px 0;
   }
-  
+
   .sobre-mim__container article h2, .tecnologias__container h2 {
     margin: 10px;
     font-size: 24px;
@@ -563,6 +588,6 @@ footer {
 
   #contato h2{
     font-size: 24px;
-    margin: 0;
+    margin: 5px;
   }
 }

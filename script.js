@@ -29,8 +29,13 @@ menuSection.forEach((item) => {
 });
 
 // Pra remover alguns itens do html (section tecnologia)
+let elementoRemovido = false;
 window.addEventListener("resize", function () {
-    if (window.innerWidth < 600) {
-      document.querySelector(".duplicado").remove();
+    if (window.innerWidth > 600 && elementoRemovido == true) {
+        window.location.reload();
+    } else if (window.innerWidth <= 600) {
+        document.querySelectorAll(".duplicado").forEach(el => el.remove());
+        elementoRemovido = true;
     }
-  });
+});
+
