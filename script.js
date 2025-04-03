@@ -2,7 +2,7 @@
 const sidebarToggle = document.getElementById('sidebar-toggle'); // botão para abrir o menu
 const sidebarMenu = document.getElementById('sidebar-menu'); // menu lateral
 const overlay = document.getElementById('overlay'); // o overlay
-const menuSection = document.querySelectorAll('.menu-section'); 
+const menuSection = document.querySelectorAll('.menu-section');  // lista com os 4 <li> do menu lateral
 
 // para abrir o menu lateral
 sidebarToggle.addEventListener('click', () => {
@@ -29,6 +29,7 @@ menuSection.forEach((item) => {
 });
 
 // Pra remover alguns itens do html (section tecnologia)
+// Nem precisava disso tudo, mas fiz assim pra caso testem pelo devtools do google
 let elementoRemovido = false;
 window.addEventListener("resize", function () {
     if (window.innerWidth > 600 && elementoRemovido == true) {
@@ -37,5 +38,11 @@ window.addEventListener("resize", function () {
         document.querySelectorAll(".duplicado").forEach(el => el.remove());
         elementoRemovido = true;
     }
+});
+
+// Pro formulário não carregar o php, mas mostrar um aviso no topo da tela como se tivesse dado certo
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Impede o envio do formulário
+    window.alert("Formulário enviado com sucesso!"); 
 });
 

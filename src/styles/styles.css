@@ -9,7 +9,7 @@
 html {
   /* pro rolamento não ser instantâneo */
   scroll-behavior: smooth; 
-  scroll-padding-top: 201px;
+  scroll-padding-top: 206px;
 }
 
 body {
@@ -154,7 +154,7 @@ body {
 /* aqui começa o main */
 .sobre-mim__container {
   display: flex;
-  margin-top: 200px;
+  margin-top: 205px;
   gap: 20px;
 }
 
@@ -379,10 +379,15 @@ body {
   justify-content: space-around;
 }
 
-.redes-sociais a i {
+.redes-sociais__container a i {
   font-size: 50px;
   margin: 5px 0 20px 0;
 }
+
+.redes-sociais__container i:hover {
+  transform: scale(1.1);
+}
+
 /* Aqui começa o footer */
 footer {
   bottom: 0;
