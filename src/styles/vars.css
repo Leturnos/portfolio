@@ -6,13 +6,11 @@
     --details-color: #161B22;
     --buttons-color: #238636;
     --hover-color: #79C0FF;
+    --correct-color: #4CAF50;
+    --incorrect-color: #f44336;
+    --correct-color-hover: #45a049;
+    --incorrect-color-hover: #d32f2f;
     /* fontes */
     --font-text: 'Roboto', sans-serif;
-    --font-title: 'Lora', serif;
-
-    /* --Bluish-black: #F5F7FA;
-    --Light-grey:  #2E3440;
-    --Light-blue: #5E81AC ;
-    --dark-grey: #D8DEE9;
-    --green: #81A1C1; */
+    --font-title: 'Lora', serif; 
 }

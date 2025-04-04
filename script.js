@@ -35,7 +35,7 @@ window.addEventListener("resize", function () {
     if (window.innerWidth > 600 && elementoRemovido == true) {
         window.location.reload();
     } else if (window.innerWidth <= 600) {
-        document.querySelectorAll(".duplicado").forEach(el => el.remove());
+        document.querySelectorAll(".duplicado").forEach(i => i.remove());
         elementoRemovido = true;
     }
 });
@@ -44,5 +44,6 @@ window.addEventListener("resize", function () {
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault(); // Impede o envio do formulário
     window.alert("Formulário enviado com sucesso!"); 
+    this.reset(); // reseta o formulário
 });
 
