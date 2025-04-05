@@ -1,7 +1,7 @@
 html {
   /* pro rolamento não ser instantâneo e ele parar 205px acima do normal*/
   scroll-behavior: smooth;
-  scroll-padding-top: 205px;
+  scroll-padding-top: 215px;
 }
 
 body {
@@ -195,13 +195,12 @@ body {
 
 
 .sobre-mim__container article h2 {
-  margin: 100px 0 40px 0;
+  margin: 60px 0 40px 0;
   font-size: 32px;
   font-family: var(--font-title);
 }
 
 .sobre-mim__container article p {
-  text-indent: 32px;
   text-align: justify;
   hyphens: auto;
   padding: 10px 20px 0 0;
@@ -239,11 +238,12 @@ body {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-33.34%);
   }
 }
 
 .tecnologias__container img {
+  display: inline-block;
   width: auto;
   height: 120px;
   margin: 20px;
@@ -446,10 +446,6 @@ footer {
   .redes-sociais a i {
     font-size: 30px;
   }
-
-  .sobre-mim__container {
-    margin-top: 150px;
-  }
 }
 
 @media (max-width: 830px) {
@@ -461,6 +457,7 @@ footer {
   .menu-hamburguer {
     display: block;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -479,7 +476,7 @@ footer {
 
   .sobre-mim__container {
     gap: 0;
-    margin-top: 130px;
+    margin-top: 135px;
   }
 
   .sobre-mim__container img {
@@ -603,6 +600,10 @@ footer {
 
   #sidebar-menu ul li {
     margin: 10px 0;
+  }
+
+  .sobre-mim__container img {
+    margin-top: 20px;
   }
 
   .sobre-mim__container article h2,
