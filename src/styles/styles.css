@@ -457,6 +457,10 @@ footer {
   .menu-hamburguer {
     display: block;
   }
+
+  .sobre-mim__container{
+    margin-top: 170px;
+  }
   
 }
 
